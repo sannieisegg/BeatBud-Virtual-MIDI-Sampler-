@@ -18,11 +18,11 @@ function setup() {
   amp = new p5.Amplitude(); // Track amplitude of sound
 
   sliderRate = createSlider(0, 2, 1, 0.01);
-  sliderRate.position(50, height + 350);
-  sliderRate.addClass('rate-slider');
+  sliderRate.position(200, height + 520);
+  sliderRate.addClass('rate-slider'); // blue
 
   sliderVolume = createSlider(0, 1, 0.5, 0.01);
-  sliderVolume.position(50, height + 430);
+  sliderVolume.position(200, height + 480);
   sliderVolume.addClass('volume-slider');
 
   cols = width / size;
