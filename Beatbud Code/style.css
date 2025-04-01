@@ -36,9 +36,14 @@ h1 {
   size: 100px;
 }
 
-.description, .song-credit, .instructions, h2, .donation, .donate-btn {
+.description, .song-credit, .instructions, h2, .donation{
   text-align: center;
   font-size: 20px;
+}
+
+.donate-btn {
+  display:block;
+  margin: 0 auto;
 }
 
 ul{
