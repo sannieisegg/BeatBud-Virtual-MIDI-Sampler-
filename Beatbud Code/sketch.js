@@ -180,12 +180,12 @@ function keyPressed() {
 // To start recording
 function startRecording() {
   if (state === 0) {
-    console.log("Recording started...");
+    alert("Recording started...");
     if (soundRecorder && soundFile) {
       soundRecorder.record(soundFile);
       state = 1; // Change state to recording
     } else {
-      console.error("Sound recorder or sound file not initialized!");
+      alert("Sound recorder or sound file not initialized!");
     }
   }
 }
@@ -193,17 +193,17 @@ function startRecording() {
 // Function to stop recording and allow download
 function stopRecording() {
   if (state === 1) {
-    console.log("Recording stopped!");
+    alert("Recording stopped!");
     soundRecorder.stop();
     state = 2; // Change state to recorded
 
     // Wait for the soundFile to be processed and check if it's valid
     setTimeout(() => {
       if (soundFile && soundFile.duration() > 0) {
-        console.log("Saving sound file...");
+        alert("Saving sound file...");
         saveSound(soundFile, 'beatbud_recording.wav');
       } else {
-        console.error("No sound recorded or soundFile is empty!");
+        alert("No sound recorded or soundFile is empty!");
       }
     }, 1000); // Add a delay to ensure the file is processed properly before saving
 
