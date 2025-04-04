@@ -17,14 +17,6 @@ function setup() {
   cnv.parent("sketch-container");
   amp = new p5.Amplitude(); // Track amplitude of sound
 
-  sliderRate = createSlider(0, 2, 1, 0.01);
-  sliderRate.position(200, height + 520);
-  sliderRate.addClass('rate-slider'); // blue
-
-  sliderVolume = createSlider(0, 1, 0.5, 0.01);
-  sliderVolume.position(200, height + 480);
-  sliderVolume.addClass('volume-slider');
-
   cols = width / size;
   rows = height / size;
 

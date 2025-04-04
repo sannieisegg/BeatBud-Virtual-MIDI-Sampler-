@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beat Buds: Interactive Sound Visualizer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com"         crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Include p5.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beat Buds: Interactive Sound Visualizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Include p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
 </head>
-  
-  
+
+
 <body>
-  <h1>🌱🎵 Welcome to Beat Buds 🌱🎵</h1>
+  <h1><span id="heading-emoji">🌱🎵</span> Welcome to Beat Buds <span id="heading-emoji">🌱🎵</span></h1>
 
   <div id="content-container">
     <div id="sketch-container">
-    
+
       <p class="description">
-        Music production is for everyone, and I want to contribute in making this a reality
+        Music production is for everyone, and I want to contribute in making this a reality.
         <span id="underline"> You don't need money to start;</span>
-        just explore the mapped sounds, experiment, and experience the joy of creating music right at your fingertips. 🙂
+        just explore the mapped sounds, experiment, and experience the joy of creating music right at your fingertips.
+        🙂
       </p>
-    
+
       <p class="song-credit">
         (Big shoutout to Pixabay and Voicemod for the free sound samples!)</p>
-    
-    
-      <p class="instructions">Press the keys below to trigger sounds:</p>
+
+      
+      <div class="instructions-wrapper">
+        <p class="instructions"><strong>Press the keys below to trigger sounds:</strong></p>
+      </div>
+      
       <ul>
         <li><strong>A, S, D, F, G</strong> - Kick Samples</li>
         <li><strong>H, J, K, L </strong> - Snare Samples</li>
         <li><strong>Q, W, E, R, T, Y, U, I, O </strong> - SFX Samples</li>
-        <li><strong>Red slider</strong> - Volume Slider</li>
-        <li><strong>Blue slider</strong> - Speed Slider</li>
-    
+
       </ul>
-    
+
       <div class="recording-controls">
         <button onclick="startRecording()">Start Recording</button>
         <button onclick="stopRecording()">Stop Recording</button>
@@ -49,20 +53,23 @@
     </div>
   </div>
 
-  <br />
-  
+  <!-- Donation Section -->
+  <h2>Support My Work 💖</h2>
+  <p class="donation">If you enjoy this project, consider buying me a coffee to support my work as I continue developing
+      this project!</p>
 
-    <!-- Donation Section -->
-    <h2>Support My Work 💖</h2>
-    <p class="donation">If you enjoy this project, consider buying me a coffee to support my work as I continue developing this project!</p>
-    <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank">
-        <button class="donate-btn">☕ Buy Me a Coffee</button>
-    </a>
-  
-  <br />
-  <br />
   <br />
 
-    <script src="sketch.js"></script>
+  
+  <a href="https://ko-fi.com/YOUR_USERNAME" target="_blank">
+    <button class="donate-btn">☕ Buy Me a Coffee</button>
+  </a>
+
+  <br />
+  <br />
+  <br />
+
+  <script src="sketch.js"></script>
 </body>
+
 </html>
