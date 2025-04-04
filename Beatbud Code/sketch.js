@@ -8,9 +8,7 @@ let size = 40; // Define the size of each grid cell
 let cnv; //to define a canvas variable 
 
 //to implement recording functionalities 
-let soundRecorder;
-let soundFile;
-let state = 0; //0 = not recording, 1= recording, 2= record complete
+let soundRecorder, soundFile, state = 0; //0 = not recording, 1= recording, 2= record complete
 
 function setup() {
   cnv = createCanvas(600, 600); // Make canvas full screen
@@ -29,8 +27,12 @@ function setup() {
 
   console.log("Recorder initialized:", soundRecorder);
   console.log("Sound file initialized:", soundFile);
+  loadSounds();
+}
 
-  // Load sound samples
+// Load sound samples
+function loadSounds() {
+
   sounds.brass_sfx = loadSound('https://raw.githubusercontent.com/sannieisegg/visualiser-project-/main/sounds/brassfx.mp3');
 
   sounds.coin_sfx = loadSound('https://raw.githubusercontent.com/sannieisegg/visualiser-project-/main/sounds/coinsfx.mp3');
@@ -113,65 +115,16 @@ function draw() {
 }
 
 function keyPressed() {
-  //for the kick samples 
-  if (key.toUpperCase() === 'A' && sounds.kick) {
-    currentSound = sounds.kick;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'S' && sounds.kick2) {
-    currentSound = sounds.kick2;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'D' && sounds.kick3) {
-    currentSound = sounds.kick3;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'F' && sounds.kick4) {
-    currentSound = sounds.kick4;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'G' && sounds.kick5) {
-    currentSound = sounds.kick5;
-    currentSound.play();
+  const soundKeys = {
+    'A': 'kick', 'S': 'kick2', 'D': 'kick3', 'F': 'kick4', 'G': 'kick5',
+    'H': 'snare', 'J': 'snare2', 'K': 'snare3', 'L': 'snare4',
+    'Q': 'orchestral_sfx', 'W': 'coin_sfx', 'E': 'brass_sfx', 'R': 'sfx4',
+    'T': 'sfx5', 'Y': 'sfx6', 'U': 'sfx7', 'I': 'meme', 'O': 'meme2'
+  };
 
-    //for the snare samples
-  } else if (key.toUpperCase() === 'H' && sounds.snare) {
-    currentSound = sounds.snare;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'J' && sounds.snare2) {
-    currentSound = sounds.snare2;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'K' && sounds.snare3) {
-    currentSound = sounds.snare3;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'L' && sounds.snare4) {
-    currentSound = sounds.snare4;
-    currentSound.play();
-
-
-    //for the sfx samples (including memes eheh)
-  } else if (key.toUpperCase() === 'Q' && sounds.orchestral_sfx) {
-    currentSound = sounds.orchestral_sfx;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'W' && sounds.coin_sfx) {
-    currentSound = sounds.coin_sfx;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'E' && sounds.brass_sfx) {
-    currentSound = sounds.brass_sfx;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'R' && sounds.sfx4) {
-    currentSound = sounds.sfx4;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'T' && sounds.sfx5) {
-    currentSound = sounds.sfx5;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'Y' && sounds.sfx6) {
-    currentSound = sounds.sfx6;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'U' && sounds.sfx7) {
-    currentSound = sounds.sfx7;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'I' && sounds.meme) {
-    currentSound = sounds.meme;
-    currentSound.play();
-  } else if (key.toUpperCase() === 'O' && sounds.meme2) {
-    currentSound = sounds.meme2;
+  const sound = soundKeys[key.toUpperCase()];
+  if (sound && sounds[sound]) {
+    currentSound = sounds[sound];
     currentSound.play();
   }
 }
