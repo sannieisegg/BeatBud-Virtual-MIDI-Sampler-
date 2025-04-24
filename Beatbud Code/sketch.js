@@ -12,7 +12,7 @@ let soundRecorder, soundFile, state = 0; //0 = not recording, 1= recording, 2= r
 
 function setup() {
 
-  cnv = createCanvas(600, 600); // Make canvas full screen
+  cnv = createCanvas(750, 750); // Make canvas full screen
   cnv.parent("sketch-container");
   amp = new p5.Amplitude(); // Track amplitude of sound
 
@@ -98,8 +98,8 @@ function draw() {
       ellipse(x, y, circleSize, circleSize);
     }
   }
-
 }
+
 
 function keyPressed() {
   const soundKeys = {
