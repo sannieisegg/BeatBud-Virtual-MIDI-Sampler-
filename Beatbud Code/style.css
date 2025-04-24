@@ -126,4 +126,14 @@ ul {
     text-align: center;
     padding-bottom: 30px;
   }
+  .plant-animation {
+    width: 300px;
+    height: 300px;
+  }
 }
+
+/* Lottie animation below donation section */
+.plant-animation {
+  margin: 0 auto;
+}
+  
