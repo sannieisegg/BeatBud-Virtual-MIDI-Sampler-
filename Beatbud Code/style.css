@@ -51,10 +51,9 @@ h1 {
   color: red;
 }
 
-.description,
-.song-credit,
 .instructions, 
 .donations,
+.credits,
 h2 {
   text-align: center;
   font-size: 20px;
@@ -65,15 +64,6 @@ ul {
   list-style-position: inside;
 }
 
-.description {
-  font-weight: 100;
-  font-style: normal;
-}
-
-.song-credit {
-  font-weight: 100;
-  font-style: italic;
-}
 
 
 /* recording controls */
@@ -92,7 +82,7 @@ ul {
   margin: 0 auto;
 }
 
-.donation {
+.donation, .credits {
   text-align: center;
   font-size: 15px;
   margin: 0px 10px;
@@ -108,11 +98,6 @@ ul {
   ul {
     padding: 0;
     margin: 0;
-  }
-
-  .description,
-  .song-credit {
-    display: none;
   }
 
   .instructions-wrapper {
@@ -136,4 +121,3 @@ ul {
 .plant-animation {
   margin: 0 auto;
 }
-  
