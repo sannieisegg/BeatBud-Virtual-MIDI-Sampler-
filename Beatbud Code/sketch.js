@@ -11,6 +11,7 @@ let cnv; //to define a canvas variable
 let soundRecorder, soundFile, state = 0; //0 = not recording, 1= recording, 2= record complete
 
 function setup() {
+
   cnv = createCanvas(600, 600); // Make canvas full screen
   cnv.parent("sketch-container");
   amp = new p5.Amplitude(); // Track amplitude of sound
@@ -76,14 +77,14 @@ function loadSounds() {
 
 
 function draw() {
-  background(0, 0, 0);
+  background(223, 249, 118);
 
   let vol = amp.getLevel(); // Get sound amplitude
   let scaleFactor = map(vol, 0, 1, 1, 3); // Scale circles based on amplitude
 
-  //defining gradient colors (light blue > white)
-  let color1 = color(173, 216, 230); //white
-  let color2 = color(255, 255, 255); //white
+  //defining gradient colors 
+  let color1 = color(250, 123, 91); //light blue
+  let color2 = color(223, 249, 118); //yellow green
   let gradientColor = lerpColor(color1, color2, vol);
 
   for (let i = 0; i < cols; i++) {
