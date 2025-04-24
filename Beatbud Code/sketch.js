@@ -98,20 +98,6 @@ function draw() {
     }
   }
 
-  // Adjust volume & rate
-  for (let key in sounds) {
-    if (sounds[key].isPlaying()) {
-      sounds[key].rate(sliderRate.value());
-      sounds[key].setVolume(sliderVolume.value());
-    }
-  }
-
-  // Update slider background
-  let sliderValue = sliderVolume.value();
-  let fillPercentage = map(sliderValue, 0, 1, 0, 100);
-  let bgGradient = `linear-gradient(to right, red ${fillPercentage}%, white ${fillPercentage}%)`;
-  document.querySelector('.volume-slider').style.background = bgGradient;
-
 }
 
 function keyPressed() {
